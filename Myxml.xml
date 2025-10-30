@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<catalog>
+   <book id="BK101">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+   </book>
+   <book id="BK102">
+      <author>Ralls, Kim</author>
+      <title>Midnight Rain</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-12-16</publish_date>
+   </book>
+   <book id="BK103">
+      <author>Corets, Eva</author>
+      <title>Maeve Ascendant</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-11-17</publish_date>
+   </book>
+   <book id="BK104">
+      <author>O'Brien, Tim</author>
+      <title>The Things They Carried</title>
+      <genre>Historical Fiction</genre>
+      <price>7.99</price>
+      <publish_date>1990-03-28</publish_date>
+   </book>
+</catalog>
