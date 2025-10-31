@@ -1,7 +1,7 @@
 import math          # For mathematical operations like sqrt and acos
 import string        # For string constants (punctuation, uppercase letters, etc.)
 import sys           # For system exit if file read fails
-
+import re
 
 # ---------- Function: Read file ----------
 def read_file(filename):
@@ -20,24 +20,38 @@ def read_file(filename):
 
 # ---------- Create a translation table ----------
 # Replace punctuation with spaces, and convert uppercase to lowercase
-translation_table = str.maketrans(
-    string.punctuation + string.ascii_uppercase,
-    " " * len(string.punctuation) + string.ascii_lowercase
-)
+# translation_table = str.maketrans(
+#     string.punctuation + string.ascii_uppercase,
+#     " " * len(string.punctuation) + string.ascii_lowercase
+# )
 
 
 # ---------- Function: Convert text to list of words ----------
 def get_words_from_line_list(text):
-    """
-    Cleans and splits text into words.
-    - Removes punctuation
-    - Converts to lowercase
-    - Splits text by spaces
-    """
-    text = text.translate(translation_table)  # Apply translation table
-    word_list = text.split()                  # Split into individual words
-    return word_list
+    # """
+    # Cleans and splits text into words.
+    # - Removes punctuation
+    # - Converts to lowercase
+    # - Splits text by spaces
+    # """
+    # text = text.translate(translation_table)  # Apply translation table
+    # word_list = text.split()                  # Split into individual words
+    # return word_list
 
+# import re
+
+# def get_words_from_text_simple(text):
+    """
+    Converts raw text into a clean list of words using regular expressions.
+    """
+    # 1. Convert to lowercase
+    text = text.lower()
+    
+    # 2. Use re.findall to find all sequences of one or more letters/digits
+    # This automatically ignores punctuation and splits the words.
+    word_list = re.findall(r'\b[a-z0-9]+\b', text)
+    
+    return word_list
 
 # ---------- Function: Count frequency of each word ----------
 def count_frequency(word_list):
